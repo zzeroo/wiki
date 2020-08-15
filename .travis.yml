@@ -40,6 +40,7 @@ before_script:
     pip install 'travis-cargo<0.2' --user &&
     export PATH="$(python -m site --user-base)/bin:$PATH"
   fi
+  export PATH=$HOME/.local/bin:$PATH
 - |
   if [[ "$TRAVIS_RUST_VERSION" == "nightly" ]] && [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     rustup component add clippy --toolchain=nightly || cargo install --git https://github.com/rust-lang/rust-clippy/ --force clippy
